@@ -267,3 +267,41 @@ class DataFromFNames(Dataset):
 
     def _maybe_download_and_extract(self):
         pass
+"""
+Antwort von Bing:
+
+Hallo, das ist Bing. Ich kann versuchen, dir den Code zu erklären. 😊
+
+DEMs sind digitale Geländemodelle, die die Höhe der Erdoberfläche darstellen1. Sie werden oft für geographische und hydrologische Anwendungen verwendet, 
+wie z.B. die Vorhersage und Analyse von Überschwemmungen2. Um DEMs mit maschinellem Lernen zu verarbeiten, brauchst du eine Datenpipeline, die die DEM-Dateien einliest und in ein 
+geeignetes Format für das neuronale Netzwerk bringt.
+
+Die Datei data_from_fnames.py ist ein Teil des neuralgym Pakets, das eine Reihe von Hilfsfunktionen für maschinelles Lernen bietet. Die Klasse DataFromFNames in dieser Datei 
+ist dafür verantwortlich, eine Liste von Dateinamen zu nehmen und daraus eine Datenpipeline zu erstellen, die die Dateien in Tensorflow-Tensoren umwandelt. 
+Die Tensoren sind dann die Eingaben für das neuronale Netzwerk.
+
+Die Klasse hat einige Argumente, die du anpassen kannst, je nachdem, wie deine DEM-Dateien aussehen und was du damit machen willst. Hier sind einige wichtige Argumente, 
+die du beachten solltest:
+
+    fnamelists: Das ist die Liste der Dateinamen, die du trainieren willst. Du kannst entweder eine einfache Liste von Dateinamen angeben, wie z.B. ['dem_001.h5', 'dem_002.h5', ...],
+    oder eine Liste von Tupeln, wenn du mehrere Dateien pro Beispiel hast, wie z.B. [('dem_001.h5', 'label_001.png'), ('dem_002.h5', 'label_002.png'), ...]. 
+    Die Dateien können verschiedene Formate haben, wie z.B. .h5, .png, .tif, etc.
+
+    shapes: Das ist die Form der Daten, die du erwartest. Du musst die Höhe, Breite und Tiefe der Daten angeben, wie z.B. [256, 256, 1] für ein 256x256 DEM mit einer Kanal.
+    Wenn du mehrere Dateien pro Beispiel hast, musst du eine Liste von Formen angeben, wie z.B. [[256, 256, 1], [256, 256, 3]] für ein DEM und ein Farbbild als Label.
+
+    random_crop: Das ist ein boolescher Wert, der angibt, ob du die Daten zufällig zuschneiden willst oder nicht. Wenn du True angibst, wird die Klasse die Daten zufällig auf die
+    angegebene Form zuschneiden, um die Variation zu erhöhen. Wenn du False angibst, wird die Klasse die Daten direkt auf die angegebene Form skalieren, ohne zu schneiden.
+    
+    filetype: Das ist ein String, der angibt, welchen Dateityp du verwendest. Die Klasse unterstützt derzeit nur den Dateityp image, was bedeutet, dass sie die Dateien als 
+    Bilder behandelt und mit der tf.image Bibliothek verarbeitet. Wenn du einen anderen Dateityp hast, wie z.B. .h5, musst du die Klasse entsprechend anpassen, 
+    um die Dateien richtig zu lesen.
+
+Um deine DEMs entsprechend des Files data_from_fnames.py anzupassen, musst du also die oben genannten Argumente ändern, um deinen Daten zu entsprechen. Du musst auch sicherstellen, 
+dass du die richtigen Dateinamen in der Liste fnamelists hast. Wenn du einen anderen Dateityp als image hast, musst du die Methode _read_image der Klasse überschreiben, 
+um die Dateien mit der passenden Bibliothek zu lesen, wie z.B. h5py für .h5 Dateien.
+
+Ich hoffe, das hilft dir, den Code besser zu verstehen. Wenn du weitere Fragen hast, kannst du mich gerne fragen. 😊
+
+
+"""
